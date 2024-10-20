@@ -28,7 +28,7 @@ setup_luks_for_device() {
         echo "Device parameter is required"
         exit 1
     fi
-    sudo clevis luks bind -d "$device" tpm2 '{"pcr_ids":"7"}'
+    sudo clevis luks bind -d "$device" tpm2 '{"pcr_bank":"sha256","pcr_ids":"7"}'
 }
 
 update_initramfs() {
